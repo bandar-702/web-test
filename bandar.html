@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة ويب</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            background-image: url('chevy.jpg'); /* رابط الصورة */
+            background-size: cover; /* لضبط حجم الصورة لتغطية كامل الصفحة */
+            background-position: center; /* لوضع الصورة في وسط الصفحة */
+            background-repeat: no-repeat; /* لمنع تكرار الصورة */
+        }
+        .content {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6); /* خلفية سوداء شفافة للنص */
+            color: white; /* نص أبيض */
+            padding: 30px;
+            border-radius: 15px; /* لتنعيم الزوايا بشكل أكبر */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* إضافة ظل لإبراز الصندوق */
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 10px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+                         <h1>بندر الشويلي</h1>
+        <h1>web test</h1>
+        <p id="date"></p>
+        <p id="time">2:00 AM</p> <!-- إضافة الوقت -->
+    </div>
+
+    <script>
+        // الحصول على تاريخ اليوم الميلادي باللغة الإنجليزية
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = today.toLocaleDateString('en-US', options); // تغيير اللغة إلى الإنجليزية
+
+        // عرض التاريخ في الصفحة
+        document.getElementById('date').innerText = dateString;
+    </script>
+</body>
+</html>
